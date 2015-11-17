@@ -1,0 +1,26 @@
+﻿<div class="CenterDiv" ng-controller="CartController">
+    <section class="CartManageSection">
+        <div>
+            @*<input type="button" value="Order" ng-click="OrderClick()" />*@
+            @*<a href="/Home/Cart" ng-click="UpdateOrder()">Update Cart</a>
+            <br />*@
+            <a href="/Home/Checkout" >Order</a>
+        </div>
+    </section>
+    <section>
+        <div>
+            <ul>
+                <li class="ProductListItemCart" ng-repeat="item in CartItems">
+                    <div>
+                        <img src="../Resources/{{item.imgPath}}.jpg" />
+                        <h5 class="ProductItemNameCart" ng-bind="item.Name"></h5>
+                        <h5 class="ProductItemPriceCart">${{item.Price}}</h5>
+                        <input class="ItemCountInput" ng-model-options="{ debounce: 500 }" type="number" value="Quantity" ng-change="ItemCountUpdate(item.ProductId, item.Count)" ng-model="item.Count" /><br />
+                        <input class="RemoveCartItem" type="button" ng-click="RemoveFromCart(item.ProductId)" value="Remove" /> 
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+</div>
+<br />

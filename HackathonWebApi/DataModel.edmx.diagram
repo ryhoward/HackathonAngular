@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f9e253e0cd6d44788ba43757b8cd6ce9" Name="Diagram1" ZoomLevel="94">
+        <EntityTypeShape EntityType="AngularBootcampModel.OrderDetail" Width="1.5" PointX="5.25" PointY="4.25" />
+        <EntityTypeShape EntityType="AngularBootcampModel.UserCartItem" Width="1.5" PointX="5.25" PointY="1.25" />
+        <EntityTypeShape EntityType="AngularBootcampModel.UserRole" Width="1.5" PointX="0.75" PointY="4.125" />
+        <EntityTypeShape EntityType="AngularBootcampModel.User" Width="1.5" PointX="3" PointY="3.625" />
+        <AssociationConnector Association="AngularBootcampModel.FK__OrderDeta__UserI__6FE99F9F" />
+        <AssociationConnector Association="AngularBootcampModel.FK__UserCartI__UserI__4CA06362" />
+        <AssociationConnector Association="AngularBootcampModel.FK__Users__RoleId__2D27B809" />
+        <EntityTypeShape EntityType="AngularBootcampModel.UserPurchaseHistoryItem" Width="1.5" PointX="7.5" PointY="4.75" />
+        <AssociationConnector Association="AngularBootcampModel.FK__UserPurch__Order__7A672E12" />
+        <AssociationConnector Association="AngularBootcampModel.FK__UserPurch__UserI__797309D9" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

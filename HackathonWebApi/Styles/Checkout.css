@@ -1,0 +1,26 @@
+﻿/*
+    Styles specifically yanked out to make styling of the checkout screen more understandable.
+    This style sheet isn't neccessary, and really should be in main.css.
+*/
+
+  .css-form input.ng-invalid.ng-touched {
+    background-color: #FA787E;
+  }
+
+  .css-form input.ng-valid.ng-touched {
+    background-color: #78FA89;
+  }
+
+.formContainer {
+    width: 335px;
+    clear: both;
+    text-align:right;
+}
+.formContainer input {
+    width: 100%;
+    clear: both;
+}
+
+.formDiv{
+    padding-bottom:9px;
+}

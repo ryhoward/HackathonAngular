@@ -1,0 +1,16 @@
+﻿<div class="CenterDiv" ng-controller="PurchaseHistoryController">
+    <section>
+        <div>
+            <ul>
+                <li class="ProductListItemCart" ng-repeat="item in HistoryItems">
+                    <div>
+                        <img src="../Resources/{{item.imgPath}}.jpg" />
+                        <h5 class="ProductItemNameCart" ng-bind="item.Name"></h5>
+                        <h5 class="ProductItemPriceCart">{{item.Price}}</h5>
+                        <h5>{{item.DateString | date:'yyyy-MM-dd HH:mm:ss Z'}}</h5>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="mainApp">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <title>Angular Bootcamp</title>
+    <script src="../../Scripts/angular.js"></script>
+    <script src="../../Scripts/Modules/MainApp.js"></script>
+    <script src="../../Scripts/angular-route.js"></script>
+    <link href="../../Styles/Main.css" rel="stylesheet" />
+    <link href="~/Styles/Checkout.css" rel="stylesheet" />
+
+    <script src="~/Scripts/Controllers/PurchaseHistoryController.js"></script>
+    <script src="~/Scripts/Controllers/CheckoutController.js"></script>
+    <script src="~/Scripts/Controllers/CartController.js"></script>
+    <script src="../../Scripts/Controllers/LogonController.js"></script>
+    <script src="../../Scripts/Controllers/ProductsController.js"></script>
+    <script src="../../Scripts/Controllers/MainController.js"></script>
+    <script src="../../Scripts/Factories/ProductsFactory.js"></script>
+    <script src="~/Scripts/Factories/CartFactory.js"></script>
+    <script src="~/Scripts/Factories/HistoryFactory.js"></script>
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div ng-controller="MainController as mainCtrl" class="container">
+            {{mainCtrl.Username}}
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Angular Bootcamp", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    @*<li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>*@
+                    <li>@Html.ActionLink("Cart", "Cart", "Home", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("Purchase History", "PurchaseHistory", "Home", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("Checkout", "Checkout", "Home", new { area = "" }, null)</li>
+                    <li ng-show="IsLoggedOn = true">@Html.ActionLink("Login", "logon", "Home", new { area = "" }, null)</li>
+                    <li ng-show="IsLoggedOn = false">@Html.ActionLink("Logout", "logon", "Home", new { area = "" }, null){{Username}}</li>
+                    <li>{{mainCtrl.Username}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <hr />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+    </footer>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

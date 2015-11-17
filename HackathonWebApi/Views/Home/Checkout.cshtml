@@ -1,0 +1,79 @@
+﻿<div class="CenterDiv" ng-controller="CheckoutController">
+
+
+    <div ng-show="CheckoutStep == ''" ng-scrollbar class="ProductsDiv">
+        <section>
+            <p>If everything looks great, let's order! Click "Next" to continue.</p>
+            <input type="button" value="Next" ng-click="ConfirmItems()" />
+        </section>
+
+        <section>
+            <div ng-repeat="product in CartItems">
+                <table class="ProductItemTable">
+                    <tr>
+                        <td class="TRImg">
+                            <img class="ProductImg" src="../Resources/{{product.imgPath}}.jpg" />
+                        </td>
+                        <td class="TRDetails">
+                            <h5 class="ProductItemPrice">${{product.price}}</h5>
+                            <h5 class="ProductItemName" title="{{product.description}}" ng-model="product.name"></h5>
+                        </td>
+                        <td class="TRPurchase">
+                            <input class="ItemCountInput" type="number" value="Quantity" ng-change="ItemCountUpdate(product.ProductId, product.Count)" ng-model="product.Count" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+    </div>
+
+    <div ng-show="CheckoutStep == 'UserDataEntry'" ng-scrollbar class="ProductsDiv">
+        <h1>Please Enter your information:</h1>
+        <section>
+            <form name="userDetailsForm" novalidate class="css-form" ng-submit="userDetailsForm.$valid">
+                <h3>Personal Information</h3>
+                <div class="formContainer">
+
+                    <div class="formDiv">Name: <input type="text" ng-model="Name" required /><br /></div>
+                    <div class="formDiv">Phone: <input type="tel" ng-model="Phone" required /><br /></div>
+                    <div class="formDiv">Email: <input type="email" ng-model="Email" required /></div>
+                </div>
+                <br />
+                <h3>Billing Address</h3>
+                <div class="formContainer">
+                    <div class="formDiv">Street: <input type="text" ng-model="BillingStreet" required /><br /></div>
+                    <div class="formDiv">Street2: <input type="text" ng-model="BillingStreet2" /><br /></div>
+                    <div class="formDiv">City <input type="text" ng-model="BillingCity" required /><br /></div>
+                    <div class="formDiv">State: <input type="text" ng-model="BillingState" required /><br /></div>
+                    <div class="formDiv">Zip: <input type="text" ng-model="BillingZip" required /></div>
+                </div>
+                <br />
+                <div>
+                    <label>Shipping Address same as Billing? <input type="checkbox" ng-model="UseSameAddress" ng-click="AddressCheckChanged()" /></label>
+                </div>
+                <br />
+                <h3>Shipping Address</h3>
+                <div class="formContainer">
+                    <div class="formDiv">Street: <input type="text" ng-model="ShippingStreet" required /><br /></div>
+                    <div class="formDiv">Street2: <input type="text" ng-model="ShippingStreet2" /><br /></div>
+                    <div class="formDiv">City <input type="text" ng-model="ShippingCity" required /><br /></div>
+                    <div class="formDiv">State: <input type="text" ng-model="ShippingState" required /><br /></div>
+                    <div class="formDiv">Zip: <input type="text" ng-model="ShippingZip" required /></div>
+                </div>
+            </form>
+
+            <input type="submit" ng-disabled="userDetailsForm.$invalid" value="Place Order" ng-click="OrderItems()" />
+        </section>
+
+        @*<section>
+            <p>Click "Place Order". You know you want to.</p>
+            
+        </section>*@
+    </div>
+
+
+    <div ng-show="CheckoutStep == 'OrderConfirmation'" ng-scrollbar class="ProductsDiv">
+        <h1>OrderConfirmation</h1>
+    </div>
+</div>

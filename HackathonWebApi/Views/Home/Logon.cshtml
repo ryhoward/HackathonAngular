@@ -1,0 +1,34 @@
+﻿<div ng-controller="LogonController">
+    <h3>
+        <font face="Verdana">Login Page</font>
+    </h3>
+    <table>
+        <tr>
+            <td>Email:</td>
+            <td><input id="txtUserName" ng-model="Username" type="text"></td>
+            <td>
+                <!--<ASP:RequiredFieldValidator ControlToValidate="txtUserName"
+                                            Display="Static" ErrorMessage="*"
+                                            ID="vUserName" />-->
+            </td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input id="txtUserPass" ng-model="Password" type="password"></td>
+            <td>
+                <!--<ASP:RequiredFieldValidator ControlToValidate="txtUserPass"
+                                            Display="Static" ErrorMessage="*"
+                                            ID="vUserPass" />-->
+            </td>
+        </tr>
+        <tr>
+            <td>Persistent Cookie:</td>
+            <td><input type="checkbox" ng-bind="PersistCookie" id="chkPersistCookie" /></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>{{status}}</td>
+        </tr>
+      </table>
+    <input type="submit" Value="Login" ng-click="Submit()" ID="cmdLogin"><p></p>
+</div>

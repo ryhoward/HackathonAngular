@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="mainApp">
+<head>
+    <title>Slalom Angular Large Project</title>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/Modules/MainApp.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+    <link href="Styles/Main.css" rel="stylesheet" />
+
+    <script src="Scripts/Controllers/LogonController.js"></script>
+    <script src="Scripts/Controllers/ProductsController.js"></script>
+    <script src="Scripts/Controllers/MainController.js"></script>
+    <script src="Scripts/Factories/ProductsFactory.js"></script>
+
+    <script src="Scripts/jquery-2.1.4.js"></script>
+</head>
+<body>
+    <header>
+        <div>
+            <div class="HeaderTitle">Hackathon</div>
+            <ul class="HeaderLinks">
+                <li><a>Home</a></li>
+                <li><a>Login</a></li>
+            </ul>
+        </div>
+    </header>
+    <div>
+        <!--Placeholder for views-->
+        <div data-ng-view=""></div>
+    </div>
+    <footer>
+        <p>@ 2014 Slalom Consulting LLC.</p>
+    </footer>
+</body>
+</html>

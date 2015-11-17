@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <div class="CenterDiv" ng-controller="ProductsController">
+        <section>
+            <div>
+                <input type="text" ng-model="searchWord" ng-change="searchChanged()" />
+                <select ng-model="selectedCategory" ng-change="categoryChanged()">
+                    <option ng-repeat="category in productCategories" value="{{category.productCategoryId}}" >{{category.name}}</option>
+                </select>
+            </div>
+        </section>
+        <!--<section>
+            <div>
+                <ul>
+                    <li class="ProductListItem" ng-repeat="product in filteredProducts">
+                        <div>
+                            <img src="../Resources/{{product.imgPath}}.jpg" />
+                            <h5 class="ProductItemName" title="{{product.description}}" ng-bind="product.name"></h5>
+                            <h5 class="ProductItemPrice">${{product.price}}</h5>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>-->
+
+        <section>
+            <div class="ProductsDiv">
+                <ul class="ProductsList">
+                    <li class="ProductListItem" ng-repeat="product in filteredProducts">
+                        <!--<div class="List">
+                            <img src="../Resources/{{product.imgPath}}.jpg" />
+                            <h5 class="ProductItemName" title="{{product.description}}" ng-bind="product.name"></h5>
+                            <h5 class="ProductItemPrice">${{product.price}}</h5>
+                        </div>-->
+                            <table class="ProductItemTable">
+                                <tr>
+                                    <td class="TRImg">
+                                        <img class="ProductImg" src="../Resources/{{product.imgPath}}.jpg" />
+                                    </td>
+                                    <td class="TRDetails">
+                                        <h5 class="ProductItemPrice">${{product.price}}</h5>
+                                        <h5 class="ProductItemName" title="{{product.description}}" ng-bind="product.name"></h5>
+                                    </td>
+                                    <td class="TRPurchase">
+                                        
+                                    </td>
+                                </tr>
+                            </table>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
